@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>EXERCIXES</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-SsYsL+MydX9eL0lTX2GvJ3TjzAvTg0BjKk+4HqYfTpMtkN6UgWcK8SvHgmuFwXE+" crossorigin="anonymous">
+<script src="https://unpkg.com/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-vd6mwGc5LY1v5K5b+rNXhUNpO5bASOzBZL+Lrq2zOuzM1Fj2AV4a3q6iOg6hJUkW" crossorigin="anonymous"></script>
+ 
+</head>
+<body>
+  <div class="contenu">
+    <div class="wrapper">
+      <header>
+	  	  <h1>Exercice JS</h1>
+		    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+			    <ul class="navbar-nav ml-auto">
+				    <li><a class="navbar-brand" href="index.html">Exercice 1</a></li>
+				    <li><a class="navbar-brand" href="exo2.html">Exercice 2</a></li>
+				    <li><a class="navbar-brand" href="exo3.html">Exercice 3</a></li>
+            <li><a class="navbar-brand" href="exo5.html">Exercice 5</a></li>
+			    	<li><a class="navbar-brand" href="exo6.html">Exercice 6</a></li>
+		     	</ul>
+		    </nav>
+        </header>
+        <div class="container">
+          <h1>Exercice 4</h1>
+          <div class="row justify-content-center"><!-- centrer horizontalement éléments dans rangée.-->
+            <div id="cadre" class="col-lg-6 col-md-8 col-sm-10 col-12"><!--colonne large  6unités sur écrans larges(lg), 8unités sur écrans moyens(md),10unités sur écrans + petits(sm), occupera largeur max 12unités sur écrans extrapetits(xs).-->
+              <h2>rendre la monaie :</h2>
+              <p>Montant du ticket à payer :</p>
+              <input type="number" id="montantTicket">
+              <p>Montant donné par le client :</p>
+              <input type="number" id="montantDonne">
+              <button onclick="calculerMonnaie()">Calculer</button>
+              <p id="resultat"></p> 
+            </div>
+          </div>               
+        </div>
+       <div class="push"></div><!--décale élément vers la droite.-->
+    </div>
+  </div>  
+  <footer class="footer">
+    <p>
+      EXERCICE 1.2.3.4.5.6 JAVASCRIPT
+    </p>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>

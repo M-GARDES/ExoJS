@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>EXERCIXES</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-SsYsL+MydX9eL0lTX2GvJ3TjzAvTg0BjKk+4HqYfTpMtkN6UgWcK8SvHgmuFwXE+" crossorigin="anonymous">
+<script src="https://unpkg.com/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-vd6mwGc5LY1v5K5b+rNXhUNpO5bASOzBZL+Lrq2zOuzM1Fj2AV4a3q6iOg6hJUkW" crossorigin="anonymous"></script>
+  
+</head>
+<body>
+    <div class="contenu">
+	    <div class="wrapper">
+            <header>
+		        <h1>Exercice JS</h1>
+		        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+			        <ul class="navbar-nav ml-auto">
+				      <li><a class="navbar-brand" href="index.html">Exercice 1</a></li>
+				      <li><a class="navbar-brand" href="exo2.html">Exercice 2</a></li>
+				      <li><a class="navbar-brand" href="exo3.html">Exercice 3</a></li>
+				      <li><a class="navbar-brand" href="exo4.html">Exercice 4</a></li>
+			          <li><a class="navbar-brand" href="exo5.html">Exercice 5</a></li>
+			        </ul>
+		        </nav>
+            </header>  
+            <div class="container">
+                <h1>Exercice 6</h1>
+		        <div class="row justify-content-center"><!-- centrer horizontalement éléments dans rangée.-->
+	                <div id="cadre" class="col-lg-6 col-md-8 col-sm-10 col-12"><!--colonne large  6unités sur écrans larges(lg), 8unités sur écrans moyens(md),10unités sur écrans + petits(sm), occupera largeur max 12unités sur écrans extrapetits(xs).-->
+                      <h2>Calcul de prime d'assurance.</h2>
+                      <p>Remplissez le formulaire pour calculer la prime d'assurance</p>
+                        <form>
+                          <label for="age">Âge :</label>
+                          <input type="number" id="age" name="age" required><br><br>
+      
+                          <label for="permis">Années de permis :</label>
+                          <input type="number" id="permis" name="permis" required><br><br>
+      
+                          <label for="accidents">Nombre d'accidents :</label>
+                          <input type="number" id="accidents" name="accidents" required><br><br>
+      
+                          <label for="anciennete">Ancienneté chez la compagnie :</label>
+                          <input type="number" id="anciennete" name="anciennete" required><br><br>
+      
+                          <button type="button" onclick="calculerPrime()">Calculer la prime</button>
+                        </form>   
+                        <p id="resultat"></p>
+		            </div>	
+		        </div>	
+            </div>	
+            <script>
+                function calculerPrime() {
+					//// Récupération des valeurs des champs "age", "permis" et "accidents"
+			      let age = parseInt(document.getElementById("age").value);
+			      let permis = parseInt(document.getElementById("permis").value);
+			      let accidents = parseInt(document.getElementById("accidents").value);
+			      let tarif = "";  // Initialisation de la variable tarif
+
+			      if (accidents > 3) {//Si accidents >à 3,  conducteur refuser pour l'assurance.
+				   tarif = "Refusé";
+				   // Condition cas où âge <25ans,permis -de 2ans et  pas eu d'accidents
+			      } else if (age < 25 && permis < 2 && accidents == 0) {
+				   tarif = "Tarif rouge";
+				   // Condition cas où âge est <25ans,permis a au moins 2 ans et  pas eu d'accidents
+			      } else if (age < 25 && permis >= 2 && accidents == 0) {
+				   tarif = "Tarif orange";
+				   // Condition âge <25 ans et 1 accident, ou âge >ou= 25 ans, permis au moins 2 ans et  pas eu d'accidents
+			      } else if ((age < 25 && permis >= 2 && accidents == 1) || (age >= 25 && permis < 2 && accidents == 0)) {
+				   tarif = "Tarif vert";
+				   // Condition cas âge <25ans et 2 accidents, ou l'âge est supérieur ou égal à 25 ans, permis -2 ans et 1 accident, ou âge >ou=25 ans, permis au moins 2 ans et pas d'accidents
+			      } else if ((age < 25 && permis >= 2 && accidents == 2) || (age >= 25 && permis < 2 && accidents == 1) || (age >= 25 && permis >= 2 && accidents == 0)) {
+				   tarif = "Tarif orange";
+			      // Condition pour le cas où aucune des conditions précédentes satisfaite
+				} else {
+			       tarif = "Tarif rouge";
+			      }
+                  // Affichage du résultat dans la balise avec l'id "resultat"
+			      let resultat = document.getElementById("resultat");
+			      resultat.innerHTML = "Le tarif est : " + tarif;
+		        }
+            </script>
+		</div>	
+		<div class="push"></div><!--décale élément vers la droite.-->
+	</div>	
+	<footer class="footer">
+	  <p>
+		EXERCICE 1.2.3.4.5.6 JAVASCRIPT
+	  </p>
+    </footer>
+	<script src="main.js"></script>
+</body>
+</html>
